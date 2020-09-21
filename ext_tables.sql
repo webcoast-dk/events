@@ -1,7 +1,7 @@
 #
-# Table structure for table 'tx_gbevents_domain_model_event'
+# Table structure for table 'tx_events_domain_model_event'
 #
-CREATE TABLE tx_gbevents_domain_model_event (
+CREATE TABLE tx_events_domain_model_event (
   uid                        int(11) unsigned default '0'    NOT NULL auto_increment,
   pid                        int(11) default '0'             NOT NULL,
 

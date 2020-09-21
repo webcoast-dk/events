@@ -1,5 +1,5 @@
 <?php
-namespace GuteBotschafter\GbEvents\Controller;
+namespace WEBcoast\Events\Controller;
 
 /***************************************************************
  *  Copyright notice
@@ -25,7 +25,7 @@ namespace GuteBotschafter\GbEvents\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use GuteBotschafter\GbEvents\Domain\Model\Event;
+use WEBcoast\Events\Domain\Model\Event;
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -57,7 +57,7 @@ class EventController extends BaseController
                     (bool)$this->settings['showStartedEvents'],
                     $this->settings['categories']
                 );
-                $this->addCacheTags($events, 'tx_gbevents_domain_model_event');
+                $this->addCacheTags($events, 'tx_events_domain_model_event');
                 $this->view->assign('events', $events);
         }
     }
@@ -70,7 +70,7 @@ class EventController extends BaseController
      */
     public function showAction(Event $event)
     {
-        $this->addCacheTags($event, 'tx_gbevents_domain_model_event');
+        $this->addCacheTags($event, 'tx_events_domain_model_event');
         $this->view->assign('event', $event);
     }
 }

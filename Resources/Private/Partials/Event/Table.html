@@ -5,9 +5,9 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th>{f:translate(key: 'tx_gbevents_domain_model_event.event_date')}</th>
-        <th>{f:translate(key: 'tx_gbevents_domain_model_event.title')}</th>
-        <th>{f:translate(key: 'tx_gbevents_domain_model_event.location')}</th>
+        <th>{f:translate(key: 'tx_events_domain_model_event.event_date')}</th>
+        <th>{f:translate(key: 'tx_events_domain_model_event.title')}</th>
+        <th>{f:translate(key: 'tx_events_domain_model_event.location')}</th>
         <f:if condition="{exportEnabled}">
           <th></th>
         </f:if>
@@ -26,7 +26,7 @@
           <f:if condition="{exportEnabled}">
             <td>
               <f:link.action action="show" controller="Export" arguments="{event : event}"
-                             title="{f:translate(key: 'tx_gbevents_domain_model_event.export')}">
+                             title="{f:translate(key: 'tx_events_domain_model_event.export')}">
                 <span class="glyphicon glyphicon-calendar"></span>
               </f:link.action>
             </td>
@@ -40,7 +40,7 @@
           <td colspan="4">
             <f:link.action action="list" controller="Export" class="btn btn-primary pull-right">
               <span class="glyphicon glyphicon-calendar"></span>
-              <f:translate key="tx_gbevents_domain_model_event.export_all"/>
+              <f:translate key="tx_events_domain_model_event.export_all"/>
             </f:link.action>
           </td>
         </tr>

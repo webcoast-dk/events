@@ -7,15 +7,15 @@ if (!defined('TYPO3_MODE')) {
 }
 
 ExtensionManagementUtility::makeCategorizable(
-    'gb_events',
-    'tx_gbevents_domain_model_event',
+    'events',
+    'tx_events_domain_model_event',
     'categories',
     []
 );
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event',
+        'title' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -31,7 +31,7 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'iconfile' => 'EXT:gb_events/Resources/Public/Icons/tx_gbevents_domain_model_event.gif',
+        'iconfile' => 'EXT:events/Resources/Public/Icons/tx_events_domain_model_event.gif',
         'searchFields' => 'title,teaser,description,location'
     ],
     'interface' => [
@@ -39,7 +39,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,--palette--;;1,title,teaser,description,location,event_date,event_time,event_stop_date,images,downloads,--div--;LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring,recurring_weeks,recurring_days,recurring_stop,recurring_exclude_holidays,recurring_exclude_dates,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,starttime,endtime',
+            'showitem' => 'sys_language_uid,l10n_parent,l10n_diffsource,hidden,--palette--;;1,title,teaser,description,location,event_date,event_time,event_stop_date,images,downloads,--div--;LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring,recurring_weeks,recurring_days,recurring_stop,recurring_exclude_holidays,recurring_exclude_dates,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,starttime,endtime',
         ],
     ],
     'palettes' => [
@@ -73,8 +73,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_gbevents_domain_model_event',
-                'foreign_table_where' => 'AND tx_gbevents_domain_model_event.pid=###CURRENT_PID### AND tx_gbevents_domain_model_event.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_events_domain_model_event',
+                'foreign_table_where' => 'AND tx_events_domain_model_event.pid=###CURRENT_PID### AND tx_events_domain_model_event.sys_language_uid IN (-1,0)',
                 'default' => 0,
             ],
         ],
@@ -134,7 +134,7 @@ return [
         ],
         'title' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.title',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -143,7 +143,7 @@ return [
         ],
         'teaser' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.teaser',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.teaser',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -153,7 +153,7 @@ return [
         ],
         'description' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.description',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.description',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -164,7 +164,7 @@ return [
         ],
         'location' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.location',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.location',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -173,7 +173,7 @@ return [
         ],
         'event_date' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.event_date',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.event_date',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
@@ -184,7 +184,7 @@ return [
         ],
         'event_time' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.event_time',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.event_time',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -193,7 +193,7 @@ return [
         ],
         'event_stop_date' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.event_stop_date',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.event_stop_date',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
@@ -204,32 +204,32 @@ return [
         ],
         'recurring_weeks' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_weeks',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks',
             'config' => [
                 'type' => 'check',
                 'items' => [
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_weeks.0',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.0',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_weeks.1',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.1',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_weeks.2',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.2',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_weeks.3',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.3',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_weeks.4',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.4',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_weeks.5',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.5',
                         '',
                     ],
                 ],
@@ -238,36 +238,36 @@ return [
         ],
         'recurring_days' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_days',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days',
             'config' => [
                 'type' => 'check',
                 'items' => [
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_days.0',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.0',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_days.1',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.1',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_days.2',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.2',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_days.3',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.3',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_days.4',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.4',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_days.5',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.5',
                         '',
                     ],
                     [
-                        'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_days.6',
+                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.6',
                         '',
                     ],
                 ],
@@ -276,7 +276,7 @@ return [
         ],
         'recurring_stop' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_stop',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_stop',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
@@ -287,7 +287,7 @@ return [
         ],
         'recurring_exclude_holidays' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_exclude_holidays',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_exclude_holidays',
             'config' => [
                 'type' => 'check',
                 'default' => 0,
@@ -295,7 +295,7 @@ return [
         ],
         'recurring_exclude_dates' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.recurring_exclude_dates',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_exclude_dates',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -305,12 +305,12 @@ return [
         ],
         'images' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.images',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.images',
             'config' => ExtensionManagementUtility::getFileFieldTCAConfig("images"),
         ],
         'downloads' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:tx_gbevents_domain_model_event.downloads',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.downloads',
             'config' => ExtensionManagementUtility::getFileFieldTCAConfig("downloads"),
         ],
     ],

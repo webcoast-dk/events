@@ -3,14 +3,14 @@
     <sDEF>
       <ROOT>
         <TCEforms>
-          <sheetTitle>LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:flexform.default.sheetTitle
+          <sheetTitle>LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:flexform.default.sheetTitle
           </sheetTitle>
         </TCEforms>
         <type>array</type>
         <el>
           <settings.limit>
             <TCEforms>
-              <label>LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:flexform.default.settings.limit</label>
+              <label>LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:flexform.default.settings.limit</label>
               <config>
                 <type>input</type>
                 <eval>int</eval>
@@ -21,7 +21,7 @@
           </settings.limit>
           <settings.detailsPid>
             <TCEforms>
-              <label>LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:flexform.default.settings.details_pid</label>
+              <label>LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:flexform.default.settings.details_pid</label>
               <config>
                 <type>group</type>
                 <internal_type>db</internal_type>
@@ -40,7 +40,7 @@
           </settings.detailsPid>
           <settings.startDateOnly>
             <TCEforms>
-              <label>LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:flexform.default.settings.startDateOnly</label>
+              <label>LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:flexform.default.settings.startDateOnly</label>
               <config>
                 <type>check</type>
                 <default>0</default>
@@ -49,7 +49,7 @@
           </settings.startDateOnly>
           <settings.showActive>
             <TCEforms>
-              <label>LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:flexform.default.settings.showStartedEvents</label>
+              <label>LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:flexform.default.settings.showStartedEvents</label>
               <config>
                 <type>check</type>
                 <default>0</default>
@@ -58,7 +58,7 @@
           </settings.showActive>
           <settings.categories>
             <TCEforms>
-              <label>LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xlf:flexform.default.settings.categories</label>
+              <label>LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:flexform.default.settings.categories</label>
               <config>
                 <type>select</type>
                 <autoSizeMax>15</autoSizeMax>

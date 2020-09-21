@@ -16,23 +16,23 @@
       <div class="media-body">
         <h4 class="media-heading">{event.title}</h4>
         <dl>
-          <dt>{f:translate(key: 'tx_gbevents_domain_model_event.title')}</dt>
+          <dt>{f:translate(key: 'tx_events_domain_model_event.title')}</dt>
           <dd>{event.title}</dd>
 
-          <dt>{f:translate(key: 'tx_gbevents_domain_model_event.description')}</dt>
+          <dt>{f:translate(key: 'tx_events_domain_model_event.description')}</dt>
           <dd>{event.description}</dd>
 
-          <dt>{f:translate(key: 'tx_gbevents_domain_model_event.location')}</dt>
+          <dt>{f:translate(key: 'tx_events_domain_model_event.location')}</dt>
           <dd>{event.location}</dd>
 
-          <dt>{f:translate(key: 'tx_gbevents_domain_model_event.event_date')}</dt>
+          <dt>{f:translate(key: 'tx_events_domain_model_event.event_date')}</dt>
           <dd>{f:render(section: 'eventDate', arguments: '{event : event}')}</dd>
 
-          <dt>{f:translate(key: 'tx_gbevents_domain_model_event.event_time')}</dt>
+          <dt>{f:translate(key: 'tx_events_domain_model_event.event_time')}</dt>
           <dd>{event.eventTime}</dd>
 
           <f:if condition="{event.downloads}">
-            <dt>{f:translate(key: 'tx_gbevents_domain_model_event.downloads')}</dt>
+            <dt>{f:translate(key: 'tx_events_domain_model_event.downloads')}</dt>
             <dd>
               <ul class="list list-unstyled">
                 <f:for each="{event.downloads}" as="download">

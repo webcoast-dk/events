@@ -1,15 +1,15 @@
-plugin.tx_gbevents {
+plugin.tx_events {
   view {
-    # cat=plugin.tx_gbevents/file; type=string; label=Path to template root (FE)
-    templateRootPath = EXT:gb_events/Resources/Private/Templates/
-    # cat=plugin.tx_gbevents/file; type=string; label=Path to template partials (FE)
-    partialRootPath = EXT:gb_events/Resources/Private/Partials/
-    # cat=plugin.tx_gbevents/file; type=string; label=Path to template layouts (FE)
-    layoutRootPath = EXT:gb_events/Resources/Private/Layouts/
+    # cat=plugin.tx_events/file; type=string; label=Path to template root (FE)
+    templateRootPath = EXT:events/Resources/Private/Templates/
+    # cat=plugin.tx_events/file; type=string; label=Path to template partials (FE)
+    partialRootPath = EXT:events/Resources/Private/Partials/
+    # cat=plugin.tx_events/file; type=string; label=Path to template layouts (FE)
+    layoutRootPath = EXT:events/Resources/Private/Layouts/
   }
 
   persistence {
-    # cat=plugin.tx_gbevents//a; type=int+; label=Default storage PID
+    # cat=plugin.tx_events//a; type=int+; label=Default storage PID
     storagePid =
   }
 }

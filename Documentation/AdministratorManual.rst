@@ -22,7 +22,7 @@ All output options can be configured in the backend using flexforms. For the „
 
 The following options are available for configuration by TypoScript:
 
-plugin.tx\_gbevents.settings
+plugin.tx\_events.settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. _holidays:

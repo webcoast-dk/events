@@ -1,5 +1,5 @@
 <?php
-namespace GuteBotschafter\GbEvents\Domain\Repository;
+namespace WEBcoast\Events\Domain\Repository;
 
 /***************************************************************
  *  Copyright notice
@@ -25,7 +25,7 @@ namespace GuteBotschafter\GbEvents\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use GuteBotschafter\GbEvents\Domain\Model\Event;
+use WEBcoast\Events\Domain\Model\Event;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\AndInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
@@ -35,7 +35,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * Repository for GuteBotschafter\GbEvents\Domain\Model\Event
+ * Repository for WEBcoast\Events\Domain\Model\Event
  */
 class EventRepository extends Repository
 {

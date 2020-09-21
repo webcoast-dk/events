@@ -1,25 +1,25 @@
-plugin.tx_gbevents {
+plugin.tx_events {
   view {
     templateRootPaths {
-      0 = {$plugin.tx_gbevents.view.templateRootPath}
+      0 = {$plugin.tx_events.view.templateRootPath}
     }
 
     partialRootPaths {
-      0 = {$plugin.tx_gbevents.view.partialRootPath}
+      0 = {$plugin.tx_events.view.partialRootPath}
     }
 
     layoutRootPaths {
-      0 = {$plugin.tx_gbevents.view.layoutRootPath}
+      0 = {$plugin.tx_events.view.layoutRootPath}
     }
   }
 
   persistence {
-    storagePid = {$plugin.tx_gbevents.persistence.storagePid}
+    storagePid = {$plugin.tx_events.persistence.storagePid}
   }
 
   # objects {
-  #   GuteBotschafter\GbEvents\Domain\Model\Event {
-  #    className = GuteBotschafter\GbEvents\Domain\Model\FullEvent
+  #   WEBcoast\Events\Domain\Model\Event {
+  #    className = WEBcoast\Events\Domain\Model\FullEvent
   #   }
   # }
   settings {

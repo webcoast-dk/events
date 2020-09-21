@@ -1,5 +1,5 @@
 <?php
-namespace GuteBotschafter\GbEvents\Hooks;
+namespace WEBcoast\Events\Hooks;
 
 /***************************************************************
  *  Copyright notice
@@ -81,17 +81,17 @@ class EventIndexer
     ) {
         // add item to "type" field
         $params['items'][] = [
-            'LLL:EXT:gb_events/Resources/Private/Language/locallang_db.xml:tx_gbevents_kesearch_event.indexer_name',
-            'gbevents_event',
-            'EXT:gb_events/Resources/Public/Icons/selicon_indexer_gbevents_event.gif',
+            'LLL:EXT:events/Resources/Private/Language/locallang_db.xml:tx_events_kesearch_event.indexer_name',
+            'events_event',
+            'EXT:events/Resources/Public/Icons/selicon_indexer_events_event.gif',
         ];
-        $GLOBALS['TCA']['tx_kesearch_indexerconfig']['columns']['target_pid']['displayCond'] .= ',gbevents_event';
-        $GLOBALS['TCA']['tx_kesearch_indexerconfig']['columns']['sysfolder']['displayCond'] .= ',gbevents_event';
+        $GLOBALS['TCA']['tx_kesearch_indexerconfig']['columns']['target_pid']['displayCond'] .= ',events_event';
+        $GLOBALS['TCA']['tx_kesearch_indexerconfig']['columns']['sysfolder']['displayCond'] .= ',events_event';
     }
 
     /**
      * Custom index for ke_search to index content provided
-     * by the extension gb_events
+     * by the extension events
      *
      * @param array $indexerConfig
      * @param \tx_kesearch_indexer $indexerObject
@@ -104,7 +104,7 @@ class EventIndexer
         $this->content = '';
 
         // bail out if we are passed a config that is not of our type
-        if ($indexerConfig['type'] !== 'gbevents_event') {
+        if ($indexerConfig['type'] !== 'events_event') {
             return false;
         }
 
@@ -147,7 +147,7 @@ class EventIndexer
     {
         $events = $this->getDatabaseConnection()->exec_SELECTquery(
             'uid, pid, tstamp, title, location',
-            'tx_gbevents_domain_model_event',
+            'tx_events_domain_model_event',
             'pid = ' . $pageId,
             '',
             ''
@@ -160,9 +160,9 @@ class EventIndexer
             $tagContent = '';
 
             $params = [
-                'tx_gbevents_main[action]' => 'show',
-                'tx_gbevents_main[controller]' => 'Event',
-                'tx_gbevents_main[event]' => $event['uid'],
+                'tx_events_main[action]' => 'show',
+                'tx_events_main[controller]' => 'Event',
+                'tx_events_main[event]' => $event['uid'],
             ];
 
             // Additional fields for the indexer
@@ -192,7 +192,7 @@ class EventIndexer
             $this->indexerObject->storeInIndex(
                 $this->indexerConfig['storagepid'],
                 $indexTitle,
-                'gbevents_event',
+                'events_event',
                 $this->indexerConfig['targetpid'],
                 $fullContent,
                 $tagContent,

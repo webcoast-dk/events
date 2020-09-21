@@ -12,7 +12,7 @@ Extension Name
 ==============
 
 :Extension name: Event Calendar
-:Extension key: gb_events
+:Extension key: events
 :Version: 6.0.1
 :Description: Manuals covering TYPO3 extension "Event Calendar"
 :Language: en

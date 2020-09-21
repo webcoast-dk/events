@@ -13,7 +13,7 @@ Bugs and Known Issues
 
 Bugs can be reported using the `Bug Tracker`_. Please include detailed steps how to reproduce the error.
 
-.. _Bug Tracker: https://bitbucket.org/gutebotschafter/gb_events/issues
+.. _Bug Tracker: https://bitbucket.org/WEBcoast/events/issues
 
 
 Note on Patches / Pull Requests
@@ -29,7 +29,7 @@ Change Log
 
 All changes are documented in the `repository log`_. The main development happens in the develop branch which will be merged back into master once a new stable version is going to be published.
 
-.. _source code: https://bitbucket.org/gutebotschafter/gb_events/
+.. _source code: https://bitbucket.org/WEBcoast/events/
 .. _BitBucket: https://bitbucket.org/
-.. _stable versions: http://typo3.org/extensions/repository/view/gb_events
-.. _repository log: https://bitbucket.org/gutebotschafter/gb_events/commits/all
+.. _stable versions: http://typo3.org/extensions/repository/view/events
+.. _repository log: https://bitbucket.org/WEBcoast/events/commits/all

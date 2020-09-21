@@ -1,5 +1,5 @@
 <?php
-namespace GuteBotschafter\GbEvents\Domain\Model;
+namespace WEBcoast\Events\Domain\Model;
 
 /***************************************************************
  *  Copyright notice

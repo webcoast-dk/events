@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="messages" date="2013-12-09T13:09:49Z"
-        product-name="gb_events">
+        product-name="events">
     <header/>
 
     <body>
-      <trans-unit id="tx_gbevents.main.title">
+      <trans-unit id="tx_events.main.title">
         <source>Event calendar</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents.upcoming.title">
+      <trans-unit id="tx_events.upcoming.title">
         <source>Event calendar (Upcoming)</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents.calendar.title">
+      <trans-unit id="tx_events.calendar.title">
         <source>Event calendar (Calendar)</source>
       </trans-unit>
       <trans-unit id="flexform.default.sheetTitle">
@@ -47,97 +47,97 @@
       <trans-unit id="flexform.default.settings.showStartedEvents">
         <source>Show events spanning multiple days until the stop date has passed</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event">
+      <trans-unit id="tx_events_domain_model_event">
         <source>Event</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.export">
+      <trans-unit id="tx_events_domain_model_event.export">
         <source>Download .ics</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.title">
+      <trans-unit id="tx_events_domain_model_event.title">
         <source>Title</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.teaser">
+      <trans-unit id="tx_events_domain_model_event.teaser">
         <source>Teaser</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.description">
+      <trans-unit id="tx_events_domain_model_event.description">
         <source>Description</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.location">
+      <trans-unit id="tx_events_domain_model_event.location">
         <source>Location</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.event_date">
+      <trans-unit id="tx_events_domain_model_event.event_date">
         <source>Event Date</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.event_time">
+      <trans-unit id="tx_events_domain_model_event.event_time">
         <source>Event Time</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.event_stop_date">
+      <trans-unit id="tx_events_domain_model_event.event_stop_date">
         <source>Event date (end)</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.images">
+      <trans-unit id="tx_events_domain_model_event.images">
         <source>Images</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.downloads">
+      <trans-unit id="tx_events_domain_model_event.downloads">
         <source>Downloads</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring">
+      <trans-unit id="tx_events_domain_model_event.recurring">
         <source>Recurring</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_weeks">
+      <trans-unit id="tx_events_domain_model_event.recurring_weeks">
         <source>Each</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_weeks.0">
+      <trans-unit id="tx_events_domain_model_event.recurring_weeks.0">
         <source>1. Woche</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_weeks.1">
+      <trans-unit id="tx_events_domain_model_event.recurring_weeks.1">
         <source>2. Woche</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_weeks.2">
+      <trans-unit id="tx_events_domain_model_event.recurring_weeks.2">
         <source>3. Woche</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_weeks.3">
+      <trans-unit id="tx_events_domain_model_event.recurring_weeks.3">
         <source>4. Woche</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_weeks.4">
+      <trans-unit id="tx_events_domain_model_event.recurring_weeks.4">
         <source>5. Woche</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_weeks.5">
+      <trans-unit id="tx_events_domain_model_event.recurring_weeks.5">
         <source>Letzte Woche</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_days">
+      <trans-unit id="tx_events_domain_model_event.recurring_days">
         <source>Every</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_days.0">
+      <trans-unit id="tx_events_domain_model_event.recurring_days.0">
         <source>Monday</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_days.1">
+      <trans-unit id="tx_events_domain_model_event.recurring_days.1">
         <source>Tuesday</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_days.2">
+      <trans-unit id="tx_events_domain_model_event.recurring_days.2">
         <source>Wednesday</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_days.3">
+      <trans-unit id="tx_events_domain_model_event.recurring_days.3">
         <source>Thursday</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_days.4">
+      <trans-unit id="tx_events_domain_model_event.recurring_days.4">
         <source>Friday</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_days.5">
+      <trans-unit id="tx_events_domain_model_event.recurring_days.5">
         <source>Saturday</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_days.6">
+      <trans-unit id="tx_events_domain_model_event.recurring_days.6">
         <source>Sunday</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_stop">
+      <trans-unit id="tx_events_domain_model_event.recurring_stop">
         <source>Repeat until</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_exclude_holidays">
+      <trans-unit id="tx_events_domain_model_event.recurring_exclude_holidays">
         <source>Event does not happen on national holidays</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_domain_model_event.recurring_exclude_dates">
+      <trans-unit id="tx_events_domain_model_event.recurring_exclude_dates">
         <source>Event does not happen on these dates (One entry per line, format YYYY-MM-DD or MM-DD)</source>
       </trans-unit>
-      <trans-unit id="tx_gbevents_kesearch_event.indexer_name">
+      <trans-unit id="tx_events_kesearch_event.indexer_name">
         <source>Events</source>
       </trans-unit>
     </body>

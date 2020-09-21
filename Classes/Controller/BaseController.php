@@ -1,5 +1,5 @@
 <?php
-namespace GuteBotschafter\GbEvents\Controller;
+namespace WEBcoast\Events\Controller;
 
 /***************************************************************
  *  Copyright notice
@@ -25,7 +25,7 @@ namespace GuteBotschafter\GbEvents\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use GuteBotschafter\GbEvents\Domain\Repository\EventRepository;
+use WEBcoast\Events\Domain\Repository\EventRepository;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper;
@@ -37,7 +37,7 @@ use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 abstract class BaseController extends ActionController
 {
     /**
-     * @var \GuteBotschafter\GbEvents\Domain\Repository\EventRepository
+     * @var \WEBcoast\Events\Domain\Repository\EventRepository
      */
     protected $eventRepository;
 
@@ -49,7 +49,7 @@ abstract class BaseController extends ActionController
     /**
      * inject the eventRepository
      *
-     * @param \GuteBotschafter\GbEvents\Domain\Repository\EventRepository eventRepository
+     * @param \WEBcoast\Events\Domain\Repository\EventRepository eventRepository
      * @return void
      */
     public function injectEventRepository(EventRepository $eventRepository)

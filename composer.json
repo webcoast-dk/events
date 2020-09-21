@@ -1,54 +1,39 @@
 {
-    "name": "gutebotschafter/gb-events",
+    "name": "WEBcoast/events",
     "type": "typo3-cms-extension",
-    "description": "A simple calendar for upcoming events",
+    "description": "Event management for TYPO3 CMS",
     "keywords": [
-        "TYPO3",
+        "typo3",
         "extension",
         "events",
         "calendar",
         "locations"
     ],
-    "version": "8.0.0-dev",
     "minimum-stability": "stable",
-    "license": "GPL-2.0-or-later",
-    "homepage": "http://www.gute-botschafter.de/",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": "Morton Jonuschat",
-            "email": "m.jonuschat@gute-botschafter.de",
-            "role": "Developer",
-            "homepage": "http://www.gute-botschafter.de/"
-        },
-        {
             "name": "Thorben Nissen",
-            "email": "thorben.nissen@kapp-hamburg.de",
+            "email": "thorben@webcoast.dk",
             "role": "developer"
         }
     ],
     "require": {
-        "php": "^7.0",
-        "typo3/cms-extbase": "^8.5.0|^9.5.0",
-        "typo3/cms-fluid": "^8.5.0|^9.5.0"
+        "typo3/cms-core": "^v10.4.0",
+        "typo3/cms-extbase": "^v10.4.0",
+        "typo3/cms-fluid": "^v10.4.0"
     },
     "require-dev": {
-        "namelesscoder/typo3-repository-client": "1.1.x-dev"
+        "namelesscoder/typo3-repository-client": "^2.0.0"
     },
     "autoload": {
         "psr-4": {
-            "GuteBotschafter\\GbEvents\\": "Classes"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "GuteBotschafter\\GbEvents\\Tests\\": "Tests",
-            "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/",
-            "TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests/"
+            "WEBcoast\\Events\\": "Classes"
         }
     },
     "replace": {
-        "gb_events": "self.version",
-        "typo3-ter/gb-events": "self.version"
+        "events": "self.version",
+        "typo3-ter/events": "self.version"
     },
     "config": {
         "vendor-dir": ".Build/vendor",
@@ -62,7 +47,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "8.x-dev"
+            "dev-master": "1.x-dev"
         },
         "typo3/cms": {
             "cms-package-dir": "{$vendor-dir}/typo3/cms",

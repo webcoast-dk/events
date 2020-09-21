@@ -1,5 +1,5 @@
 <?php
-namespace GuteBotschafter\GbEvents\Controller;
+namespace WEBcoast\Events\Controller;
 
 /***************************************************************
  *  Copyright notice
@@ -25,7 +25,7 @@ namespace GuteBotschafter\GbEvents\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use GuteBotschafter\GbEvents\Domain\Model\Event;
+use WEBcoast\Events\Domain\Model\Event;
 
 /**
  * ExportController
@@ -35,7 +35,7 @@ class ExportController extends BaseController
     /**
      * Prefix for iCalendar files
      */
-    const VCALENDAR_START = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:gb_events TYPO3 Extension\nMETHOD:PUBLISH";
+    const VCALENDAR_START = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:events TYPO3 Extension\nMETHOD:PUBLISH";
 
     /**
      * Postfix for iCalendar files
@@ -59,14 +59,14 @@ class ExportController extends BaseController
             /** @var Event $event */
             $content[$event->getUniqueIdentifier()] = $event->iCalendarData();
         }
-        $this->addCacheTags($events, 'tx_gbevents_domain_model_event');
+        $this->addCacheTags($events, 'tx_events_domain_model_event');
         $this->renderCalendar(join("\n", $content));
     }
 
     /**
      * Exports a single Event as iCalendar file
      *
-     * @param \GuteBotschafter\GbEvents\Domain\Model\Event $event
+     * @param \WEBcoast\Events\Domain\Model\Event $event
      * @throws \Exception
      */
     public function showAction(Event $event)

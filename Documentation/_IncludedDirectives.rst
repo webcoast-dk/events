@@ -3,7 +3,7 @@
 	Hint: following expression |my_substition_value| will be replaced when rendering doc.
 
 .. |author| replace:: Morton Jonuschat <m.jonuschat@gute-botschafte.de>, Gute Botschafter GmbH
-.. |extension_key| replace:: gb_events
+.. |extension_key| replace:: events
 .. |extension_name| replace:: Event Calendar
 .. |typo3| image:: Images/Typo3.png
 .. |time| date:: %m-%d-%Y %H:%M
