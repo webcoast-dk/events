@@ -86,8 +86,14 @@
             <trans-unit id="tx_events_domain_model_event.images">
                 <source>Images</source>
             </trans-unit>
+            <trans-unit id="tx_events_domain_model_event.images.add">
+                <source>Add image</source>
+            </trans-unit>
             <trans-unit id="tx_events_domain_model_event.downloads">
                 <source>Downloads</source>
+            </trans-unit>
+            <trans-unit id="tx_events_domain_model_event.downloads.add">
+                <source>Add file</source>
             </trans-unit>
             <trans-unit id="tx_events_domain_model_event.recurring">
                 <source>Recurring</source>

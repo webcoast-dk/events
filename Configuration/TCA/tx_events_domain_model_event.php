@@ -1,8 +1,10 @@
 <?php
 
+$llPrefix = 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event';
+
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event',
+        'title' => $llPrefix,
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -76,7 +78,7 @@ return [
         ],
         'hidden' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.hidden',
+            'label' => $llPrefix . '.hidden',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -123,7 +125,7 @@ return [
         ],
         'title' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.title',
+            'label' => $llPrefix . '.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -132,7 +134,7 @@ return [
         ],
         'teaser' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.teaser',
+            'label' => $llPrefix . '.teaser',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -142,7 +144,7 @@ return [
         ],
         'description' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.description',
+            'label' => $llPrefix . '.description',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -153,7 +155,7 @@ return [
         ],
         'location' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.location',
+            'label' => $llPrefix . '.location',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -162,7 +164,7 @@ return [
         ],
         'date' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.date',
+            'label' => $llPrefix . '.date',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'input',
@@ -175,7 +177,7 @@ return [
         ],
         'time' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.time',
+            'label' => $llPrefix . '.time',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'input',
@@ -186,7 +188,7 @@ return [
         ],
         'end_date' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.end_date',
+            'label' => $llPrefix . '.end_date',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'input',
@@ -199,7 +201,7 @@ return [
         ],
         'end_time' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.end_time',
+            'label' => $llPrefix . '.end_time',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'input',
@@ -210,7 +212,7 @@ return [
         ],
         'non_stop' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.non_stop',
+            'label' => $llPrefix . '.non_stop',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'check',
@@ -222,33 +224,33 @@ return [
         ],
         'recurring_weeks' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks',
+            'label' => $llPrefix . '.recurring_weeks',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'check',
                 'items' => [
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.0',
+                        $llPrefix . '.recurring_weeks.0',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.1',
+                        $llPrefix . '.recurring_weeks.1',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.2',
+                        $llPrefix . '.recurring_weeks.2',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.3',
+                        $llPrefix . '.recurring_weeks.3',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.4',
+                        $llPrefix . '.recurring_weeks.4',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_weeks.5',
+                        $llPrefix . '.recurring_weeks.5',
                         '',
                     ],
                 ],
@@ -257,37 +259,37 @@ return [
         ],
         'recurring_days' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days',
+            'label' => $llPrefix . '.recurring_days',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'check',
                 'items' => [
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.0',
+                        $llPrefix . '.recurring_days.0',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.1',
+                        $llPrefix . '.recurring_days.1',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.2',
+                        $llPrefix . '.recurring_days.2',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.3',
+                        $llPrefix . '.recurring_days.3',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.4',
+                        $llPrefix . '.recurring_days.4',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.5',
+                        $llPrefix . '.recurring_days.5',
                         '',
                     ],
                     [
-                        'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_days.6',
+                        $llPrefix . '.recurring_days.6',
                         '',
                     ],
                 ],
@@ -296,7 +298,7 @@ return [
         ],
         'recurring_stop' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_stop',
+            'label' => $llPrefix . '.recurring_stop',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'input',
@@ -309,7 +311,7 @@ return [
         ],
         'recurring_exclude_holidays' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_exclude_holidays',
+            'label' => $llPrefix . '.recurring_exclude_holidays',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'check',
@@ -319,7 +321,7 @@ return [
         ],
         'recurring_exclude_dates' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring_exclude_dates',
+            'label' => $llPrefix . '.recurring_exclude_dates',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'text',
@@ -330,13 +332,33 @@ return [
         ],
         'images' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.images',
-            'config' => TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig("images"),
+            'label' => $llPrefix . '.images',
+            'config' => TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('images',
+                [
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => $llPrefix . '.images.add',
+                        'fileUploadAllowed' => false
+                    ],
+                    'behaviour' => [
+                        'allowLanguageSynchronization' => true
+                    ]
+                ],
+                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']),
         ],
         'downloads' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.downloads',
-            'config' => TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig("downloads"),
+            'label' => $llPrefix . '.downloads',
+            'config' => TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('downloads',
+                [
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => $llPrefix . '.downloads.add',
+                        'fileUploadAllowed' => false
+                    ],
+                    'behaviour' => [
+                        'allowLanguageSynchronization' => true
+                    ]
+                ]
+            ),
         ],
     ],
 ];
