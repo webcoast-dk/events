@@ -68,6 +68,9 @@
             <trans-unit id="tx_events_domain_model_event.location">
                 <source>Location</source>
             </trans-unit>
+            <trans-unit id="tx_events_domain_model_event.organizer">
+                <source>Organizer</source>
+            </trans-unit>
             <trans-unit id="tx_events_domain_model_event.date">
                 <source>Date</source>
             </trans-unit>
@@ -154,6 +157,25 @@
             </trans-unit>
             <trans-unit id="tx_events_kesearch_event.indexer_name">
                 <source>Events</source>
+            </trans-unit>
+
+            <trans-unit id="tx_events_domain_model_organizer">
+                <source>Organizer</source>
+            </trans-unit>
+            <trans-unit id="tx_events_domain_model_organizer.name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="tx_events_domain_model_organizer.address">
+                <source>Address</source>
+            </trans-unit>
+            <trans-unit id="tx_events_domain_model_organizer.phone">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="tx_events_domain_model_organizer.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_events_domain_model_organizer.website">
+                <source>Website</source>
             </trans-unit>
         </body>
     </file>

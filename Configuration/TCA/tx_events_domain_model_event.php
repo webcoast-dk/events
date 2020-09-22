@@ -24,7 +24,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => 'title,teaser,description,location,--palette--;;times,images,downloads,--div--;LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring,recurring_weeks,recurring_days,recurring_stop,recurring_exclude_holidays,recurring_exclude_dates,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,--palette--;;access',
+            'showitem' => 'title,teaser,description,location,organizer,--palette--;;times,images,downloads,--div--;LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring,recurring_weeks,recurring_days,recurring_stop,recurring_exclude_holidays,recurring_exclude_dates,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,--palette--;;access',
         ],
     ],
     'palettes' => [
@@ -47,6 +47,7 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'special' => 'languages',
+                'default' => 0,
                 'items' => [
                     [
                         'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
@@ -138,7 +139,7 @@ return [
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
-                'rows' => 15,
+                'rows' => 5,
                 'eval' => 'trim',
             ],
         ],
@@ -157,10 +158,39 @@ return [
             'exclude' => 0,
             'label' => $llPrefix . '.location',
             'config' => [
-                'type' => 'input',
-                'size' => 30,
+                'type' => 'text',
+                'cols' => 30,
+                'rows' => 5,
                 'eval' => 'trim',
             ],
+        ],
+        'organizer' => [
+            'exclude' => 1,
+            'label' => $llPrefix . '.organizer',
+            'l10n_mode' => 'exclude',
+            'config' => [
+                'type' => 'group',
+                'internal_type' => 'db',
+                'allowed' => 'tx_events_domain_model_organizer',
+                'foreign_table' => 'tx_events_domain_model_organizer',
+                'MM' => 'tx_events_domain_model_event_2_organizer',
+                'size' => 5,
+                'autoSizeMax' => 20,
+                'fieldControl' => [
+                    'addRecord' => [
+                        'disabled' => false,
+                        'after' => [
+                            'elementBrowser'
+                        ]
+                    ],
+                    'editPopup' => [
+                        'disabled' => false,
+                        'after' => [
+                            'addRecord'
+                        ]
+                    ]
+                ]
+            ]
         ],
         'date' => [
             'exclude' => 0,
