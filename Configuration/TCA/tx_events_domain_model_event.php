@@ -22,13 +22,16 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => 'title,teaser,description,location,event_date,event_time,event_stop_date,images,downloads,--div--;LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring,recurring_weeks,recurring_days,recurring_stop,recurring_exclude_holidays,recurring_exclude_dates,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,--palette--;;access',
+            'showitem' => 'title,teaser,description,location,--palette--;;times,images,downloads,--div--;LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring,recurring_weeks,recurring_days,recurring_stop,recurring_exclude_holidays,recurring_exclude_dates,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,--palette--;;access',
         ],
     ],
     'palettes' => [
+        'times' => [
+            'showitem' => 'date, time, --linebreak--, end_date, end_time, --linebreak--, non_stop'
+        ],
         'access' => [
             'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access',
-            'showitem' => 'hidden;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:field.default.hidden, starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel, endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel, --linebreak--, fe_group;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:fe_group_formlabel'
+            'showitem' => 'hidden, starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel, endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel, --linebreak--, fe_group;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:fe_group_formlabel'
         ],
         'language' => [
             'showitem' => 'sys_language_uid;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:sys_language_uid_formlabel,l18n_parent'
@@ -73,7 +76,7 @@ return [
         ],
         'hidden' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.hidden',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -157,9 +160,9 @@ return [
                 'eval' => 'trim',
             ],
         ],
-        'event_date' => [
+        'date' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.event_date',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.date',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'input',
@@ -170,9 +173,9 @@ return [
                 'checkbox' => 1,
             ],
         ],
-        'event_time' => [
+        'time' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.event_time',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.time',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'input',
@@ -181,9 +184,9 @@ return [
                 'eval' => 'time',
             ],
         ],
-        'event_stop_date' => [
+        'end_date' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.event_stop_date',
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.end_date',
             'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'input',
@@ -192,6 +195,29 @@ return [
                 'size' => 12,
                 'eval' => 'date',
                 'checkbox' => 1,
+            ],
+        ],
+        'end_time' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.end_time',
+            'l10n_mode' => 'exclude',
+            'config' => [
+                'type' => 'input',
+                'dbType' => 'time',
+                'size' => 10,
+                'eval' => 'time',
+            ],
+        ],
+        'non_stop' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.non_stop',
+            'l10n_mode' => 'exclude',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'items' => [
+                    ['', '', 'invertStateDisplay' => true]
+                ]
             ],
         ],
         'recurring_weeks' => [

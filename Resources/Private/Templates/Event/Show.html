@@ -25,10 +25,10 @@
           <dt>{f:translate(key: 'tx_events_domain_model_event.location')}</dt>
           <dd>{event.location}</dd>
 
-          <dt>{f:translate(key: 'tx_events_domain_model_event.event_date')}</dt>
+          <dt>{f:translate(key: 'tx_events_domain_model_event.date')}</dt>
           <dd>{f:render(section: 'eventDate', arguments: '{event : event}')}</dd>
 
-          <dt>{f:translate(key: 'tx_events_domain_model_event.event_time')}</dt>
+          <dt>{f:translate(key: 'tx_events_domain_model_event.time')}</dt>
           <dd>{event.eventTime}</dd>
 
           <f:if condition="{event.downloads}">

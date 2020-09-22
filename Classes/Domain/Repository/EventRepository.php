@@ -111,9 +111,9 @@ class EventRepository extends Repository
         $stopDate = new \DateTime('midnight + 5 years');
 
         $query = $this->createQuery();
-        $query->setOrderings(['event_date' => QueryInterface::ORDER_ASCENDING]);
+        $query->setOrderings(['date' => QueryInterface::ORDER_ASCENDING]);
         /** @var \TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface $conditions */
-        $conditions = $query->greaterThanOrEqual('event_date', $startDate);
+        $conditions = $query->greaterThanOrEqual('date', $startDate);
         $this->applyRecurringConditions($query, $conditions, $startDate, $stopDate, $categories);
 
         return $this->resolveRecurringEvents(
@@ -144,9 +144,9 @@ class EventRepository extends Repository
         $cutOffDate = new \DateTime($limit . ' years ago midnight');
 
         $query = $this->createQuery();
-        $query->setOrderings(['event_date' => QueryInterface::ORDER_ASCENDING]);
+        $query->setOrderings(['date' => QueryInterface::ORDER_ASCENDING]);
         /** @var \TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface $conditions */
-        $conditions = $query->greaterThanOrEqual('event_date', $startDate);
+        $conditions = $query->greaterThanOrEqual('date', $startDate);
         $this->applyRecurringConditions($query, $conditions, $startDate, $stopDate, $categories);
         $events = array_filter(
             $this->resolveRecurringEvents($query->execute(), $grouped = false, $startDate, $stopDate, true),
@@ -182,7 +182,7 @@ class EventRepository extends Repository
             // Wiederkehrende Veranstaltung
             $query->logicalAnd(
             // Beginnt vor dem Ende des gesuchten Zeitraums
-                $query->lessThanOrEqual('event_date', $stopDate),
+                $query->lessThanOrEqual('date', $stopDate),
                 // Mindestens ein Wiederholungskriterium gesetzt
                 $query->logicalOr(
                     $query->greaterThan('recurringDays', 0),
@@ -313,15 +313,15 @@ class EventRepository extends Repository
         $showStartedEvents = false
     ) {
         $conditions = $query->logicalAnd(
-            $query->greaterThanOrEqual('event_date', $startDate),
-            $query->lessThanOrEqual('event_date', $stopDate)
+            $query->greaterThanOrEqual('date', $startDate),
+            $query->lessThanOrEqual('date', $stopDate)
         );
         if ($showStartedEvents == true) {
             $conditions = $query->logicalOr(
                 $conditions,
                 $query->logicalAnd(
-                    $query->lessThanOrEqual('event_date', $startDate),
-                    $query->greaterThanOrEqual('event_stop_date', $startDate)
+                    $query->lessThanOrEqual('date', $startDate),
+                    $query->greaterThanOrEqual('end_date', $startDate)
                 )
             );
         }
@@ -345,7 +345,7 @@ class EventRepository extends Repository
         $categories = null
     ) {
         $query = $this->createQuery();
-        $query->setOrderings(['event_date' => QueryInterface::ORDER_ASCENDING]);
+        $query->setOrderings(['date' => QueryInterface::ORDER_ASCENDING]);
         $conditions = $this->getBaseConditions($query, $startDate, $stopDate, $showStartedEvents);
         $this->applyRecurringConditions($query, $conditions, $startDate, $stopDate, $categories);
 
