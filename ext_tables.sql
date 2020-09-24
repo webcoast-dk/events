@@ -16,7 +16,8 @@ create table tx_events_domain_model_event
     recurring_days             int(11)          not null default '0',
     recurring_stop             date             null,
     recurring_exclude_holidays tinyint(4)       not null default '0',
-    recurring_exclude_dates    text
+    recurring_exclude_dates    text,
+    content_elements           int(10) unsigned not null default '0'
 );
 
 create table tx_events_domain_model_organizer
@@ -33,4 +34,9 @@ create table tx_events_domain_model_event_2_organizer
     uid_local   int(10) unsigned not null default '0',
     uid_foreign int(10) unsigned not null default '0',
     sorting     int(11)          not null default '0'
+);
+
+create table tt_content
+(
+    tx_events_parent int(10) not null default '0'
 );

@@ -36,32 +36,8 @@ use TYPO3\CMS\Core\Resource\FileReference;
 /**
  * A single event
  */
-class Event extends AbstractEntity implements EventInterface
+class Event extends AbstractEntity
 {
-    /**
-     * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
-     */
-    protected $configurationManager;
-
-    /**
-     * @var \TYPO3\CMS\Extbase\Object\ObjectManagerInterface;
-     */
-    protected $objectManager;
-
-    /**
-     * Extension settings
-     *
-     * @var array
-     */
-    protected $settings;
-
-    /**
-     * Extension settings
-     *
-     * @var array
-     */
-    protected $excludedDates;
-
     /**
      * The title of the event
      *
@@ -93,19 +69,39 @@ class Event extends AbstractEntity implements EventInterface
     protected $location;
 
     /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\WEBCoast\Events\Domain\Model\Organizer>
+     */
+    protected $organizer;
+
+    /**
      * The date when the event happens
      *
      * @var \DateTime
      * @validate NotEmpty
      */
-    protected $eventDate;
+    protected $date;
 
     /**
      * The time the event happens
      *
-     * @var string
+     * @var \DateTime
      */
-    protected $eventTime;
+    protected $time;
+
+    /**
+     * @var \DateTime
+     */
+    protected $endDate;
+
+    /**
+     * @var \DateTime
+     */
+    protected $endTime;
+
+    /**
+     * @var boolean
+     */
+    protected $nonStop;
 
     /**
      * images
@@ -143,13 +139,6 @@ class Event extends AbstractEntity implements EventInterface
     protected $recurringStop;
 
     /**
-     * The date when the event ends
-     *
-     * @var \DateTime
-     */
-    protected $eventStopDate;
-
-    /**
      * Exclude national holidays from the recurring events list
      *
      * @var boolean
@@ -164,95 +153,58 @@ class Event extends AbstractEntity implements EventInterface
     protected $recurringExcludeDates;
 
     /**
+     * @var array|integer[]
+     */
+    protected $contentElements;
+
+    /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
      * @lazy
      */
     protected $categories;
-
-    /**
-     * inject the objectManager
-     *
-     * @param \TYPO3\CMS\Extbase\Object\ObjectManagerInterface $objectManager $objectManager
-     */
-    public function injectObjectManager(ObjectManagerInterface $objectManager)
-    {
-        $this->objectManager = $objectManager;
-    }
-
-    /**
-     * inject the configurationManager
-     *
-     * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface configurationManager configurationManager
-     * @return void
-     */
-    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
-    {
-        $this->configurationManager = $configurationManager;
-    }
-
-    /**
-     * Tasks to perform on object initialization
-     *
-     * @return void
-     */
-    public function initializeObject()
-    {
-        if ($this->objectManager === null) {
-            $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        }
-        if ($this->configurationManager === null) {
-            $this->configurationManager = $this->objectManager->get(ConfigurationManagerInterface::class);
-        }
-        $this->images = $this->objectManager->get(ObjectStorage::class);
-        $this->downloads = $this->objectManager->get(ObjectStorage::class);
-        $this->categories = $this->objectManager->get(ObjectStorage::class);
-        $this->settings = $this->configurationManager->getConfiguration(
-            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS
-        );
-    }
-
-    /**
-     * Setup the excluded dates
-     *
-     * @return void
-     */
-    public function initializeExcludedDates()
-    {
-        if (is_array($this->excludedDates)) {
-            return;
-        }
-        $this->excludedDates = [];
-
-        // Global excludes
-        if (intval($this->settings['forceExcludeHolidays']) !== 0
-            || $this->getRecurringExcludeHolidays() === true
-        ) {
-            if (is_array($this->settings['holidays'])
-                && count($this->settings['holidays']) !== 0
-            ) {
-                foreach ($this->settings['holidays'] as $holiday) {
-                    try {
-                        $date = $this->expandExcludeDate($holiday);
-                        $this->excludedDates[$date->format('Y')][$date->format('m-d')] = 1;
-                    } catch (\Exception $e) {
-                        continue;
-                    }
-                }
-            }
-        }
-        // Per event excludes
-        foreach ($this->getRecurringExcludeDatesArray() as $excludedDate) {
-            if (trim($excludedDate) === '') {
-                continue;
-            }
-            try {
-                $date = $this->expandExcludeDate($excludedDate);
-                $this->excludedDates[$date->format('Y')][$date->format('m-d')] = 1;
-            } catch (\Exception $e) {
-                continue;
-            }
-        }
-    }
+//
+//    /**
+//     * Setup the excluded dates
+//     *
+//     * @return void
+//     */
+//    public function initializeExcludedDates()
+//    {
+//        if (is_array($this->excludedDates)) {
+//            return;
+//        }
+//        $this->excludedDates = [];
+//
+//        // Global excludes
+//        if (intval($this->settings['forceExcludeHolidays']) !== 0
+//            || $this->getRecurringExcludeHolidays() === true
+//        ) {
+//            if (is_array($this->settings['holidays'])
+//                && count($this->settings['holidays']) !== 0
+//            ) {
+//                foreach ($this->settings['holidays'] as $holiday) {
+//                    try {
+//                        $date = $this->expandExcludeDate($holiday);
+//                        $this->excludedDates[$date->format('Y')][$date->format('m-d')] = 1;
+//                    } catch (\Exception $e) {
+//                        continue;
+//                    }
+//                }
+//            }
+//        }
+//        // Per event excludes
+//        foreach ($this->getRecurringExcludeDatesArray() as $excludedDate) {
+//            if (trim($excludedDate) === '') {
+//                continue;
+//            }
+//            try {
+//                $date = $this->expandExcludeDate($excludedDate);
+//                $this->excludedDates[$date->format('Y')][$date->format('m-d')] = 1;
+//            } catch (\Exception $e) {
+//                continue;
+//            }
+//        }
+//    }
 
     /**
      * @param string $title

@@ -9,13 +9,13 @@
                 <source>Event calendar</source>
             </trans-unit>
             <trans-unit id="tx_events.upcoming.title">
-                <source>Event calendar (Upcoming)</source>
+                <source>Upcoming events</source>
+            </trans-unit>
+            <trans-unit id="tx_events.upcoming.description">
+                <source>Show the next upcoming events</source>
             </trans-unit>
             <trans-unit id="tx_events.calendar.title">
                 <source>Event calendar (Calendar)</source>
-            </trans-unit>
-            <trans-unit id="flexform.default.sheetTitle">
-                <source>Defaults</source>
             </trans-unit>
             <trans-unit id="flexform.default.display_mode">
                 <source>Display</source>
@@ -30,7 +30,7 @@
                 <source>Archive</source>
             </trans-unit>
             <trans-unit id="flexform.default.settings.limit">
-                <source>No of events to show</source>
+                <source>Show # events</source>
             </trans-unit>
             <trans-unit id="flexform.default.settings.years">
                 <source>Limit output to this many years</source>
@@ -49,6 +49,9 @@
             </trans-unit>
             <trans-unit id="tx_events_domain_model_event">
                 <source>Event</source>
+            </trans-unit>
+            <trans-unit id="tx_events_domain_model_event.tabs.content">
+                <source>Content</source>
             </trans-unit>
             <trans-unit id="tx_events_domain_model_event.export">
                 <source>Download .ics</source>
@@ -154,6 +157,9 @@
             </trans-unit>
             <trans-unit id="tx_events_domain_model_event.recurring_exclude_dates">
                 <source>Event does not happen on these dates (One entry per line, format YYYY-MM-DD or MM-DD)</source>
+            </trans-unit>
+            <trans-unit id="tx_events_domain_model_event.content_elements">
+                <source>Content elements</source>
             </trans-unit>
             <trans-unit id="tx_events_kesearch_event.indexer_name">
                 <source>Events</source>

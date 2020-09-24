@@ -3,7 +3,7 @@ if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     'WEBcoast.Events',
     'Main',
     [
@@ -14,7 +14,7 @@ if (!defined('TYPO3_MODE')) {
     ]
 );
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     'WEBcoast.Events',
     'Upcoming',
     [
@@ -22,10 +22,9 @@ if (!defined('TYPO3_MODE')) {
     ]
 );
 
-// ke_search indexer
-if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('ke_search')) {
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['ke_search']['registerIndexerConfiguration'][] =
-        'EXT:events/Classes/Hooks/EventIndexer.php:' . \WEBcoast\Events\Hooks\EventIndexer::class;
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['ke_search']['customIndexer'][] =
-        \WEBcoast\Events\Hooks\EventIndexer::class;
-}
+$iconRegistry = TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(TYPO3\CMS\Core\Imaging\IconRegistry::class);
+$iconRegistry->registerIcon(
+    'ext-events-plugin',
+    TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+    ['source' => 'EXT:events/ext_icon.gif']
+);

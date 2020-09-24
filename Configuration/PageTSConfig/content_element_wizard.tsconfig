@@ -1,0 +1,9 @@
+mod.wizards.newContentElement.wizardItems.plugins.elements.events {
+    title = LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events.upcoming.title
+    description = LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events.upcoming.description
+    iconIdentifier = ext-events-plugin
+    tt_content_defValues {
+        CType = list
+        list_type = events_upcoming
+    }
+}

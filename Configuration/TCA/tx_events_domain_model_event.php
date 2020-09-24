@@ -24,7 +24,7 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => 'title,teaser,description,location,organizer,--palette--;;times,images,downloads,--div--;LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring,recurring_weeks,recurring_days,recurring_stop,recurring_exclude_holidays,recurring_exclude_dates,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,--palette--;;access',
+            'showitem' => 'title,teaser,description,location,organizer,--palette--;;times,images,downloads,--div--;LLL:EXT:events/Resources/Private/Language/locallang_db.xlf:tx_events_domain_model_event.recurring,recurring_weeks,recurring_days,recurring_stop,recurring_exclude_holidays,recurring_exclude_dates,--div--;' . $llPrefix . '.tabs.content' . ',content_elements,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:tabs.access,--palette--;;access',
         ],
     ],
     'palettes' => [
@@ -389,6 +389,34 @@ return [
                     ]
                 ]
             ),
+        ],
+        'content_elements' => [
+            'exclude' => true,
+            'label' => $llPrefix . '.content_elements',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tt_content',
+                'foreign_sortby' => 'sorting',
+                'foreign_field' => 'tx_events_parent',
+                'minitems' => 0,
+                'maxitems' => 99,
+                'appearance' => [
+                    'collapseAll' => true,
+                    'levelLinksPosition' => 'both',
+                    'useSortable' => true,
+                    'showPossibleLocalizationRecords' => true,
+                    'showRemovedLocalizationRecords' => true,
+                    'showAllLocalizationLink' => true,
+                    'showSynchronizationLink' => true,
+                    'enabledControls' => [
+                        'info' => false,
+                    ]
+                ],
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+                'enableCascadingDelete' => true,
+            ]
         ],
     ],
 ];
